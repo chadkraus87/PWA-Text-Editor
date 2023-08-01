@@ -16,13 +16,8 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './src/index.html',
-        chunks: ['main'],
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'install.html',
-        template: './src/install.html',
-        chunks: ['install'],
+        template: './index.html',
+        title: 'JATE',
       }),
       new WebpackPwaManifest({
         name: 'J.A.T.E',
@@ -33,7 +28,7 @@ module.exports = () => {
         crossorigin: 'use-credentials', // can be null, use-credentials or anonymous
         icons: [
           {
-            src: path.resolve('client/src/images/logo.png'),
+            src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
             destination: path.join('assets', 'icons'),
           },
@@ -41,15 +36,22 @@ module.exports = () => {
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'sw.js',
+        swDest: 'src-sw.js',
       }),
     ],
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.m?js$/,
           exclude: /node_modules/,
-          use: 'babel-loader',
+          // We use babel-loader in order to use ES6.
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+            },
+          },
         },
         {
           test: /\.css$/,
