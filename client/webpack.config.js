@@ -20,12 +20,16 @@ module.exports = () => {
         title: 'JATE',
       }),
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
         name: 'J.A.T.E',
         short_name: 'JATE',
         description: 'Just Another Text Editor',
         background_color: '#ffffff',
         theme_color: '#ffffff',
         crossorigin: 'use-credentials', // can be null, use-credentials or anonymous
+        start_url: '/',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
