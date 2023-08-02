@@ -10,6 +10,7 @@ PWA Text Editor is a progressive web application that enables users to create an
 [GitHub Repository](https://github.com/chadkraus87/PWA-Text-Editor)
 
 !["JATE" Just Another Text Editor Landing Page](/public/images/jatefrontend.png)
+!["JATE" Just Another Text Editor Landing Page](/public/images/funconsole.png)
 
 ## Table of Contents
 - [Installation](#installation)
