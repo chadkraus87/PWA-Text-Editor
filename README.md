@@ -8,6 +8,7 @@ An application that allows you to create code snippets with or without an intern
 PWA Text Editor is a progressive web application that enables users to create and manage code snippets even without an internet connection. This application utilizes modern web technologies to provide a seamless experience for developers who need a lightweight, offline-capable text editor for storing and organizing their code snippets.
 
 [GitHub Repository](https://github.com/chadkraus87/PWA-Text-Editor)
+
 [Deployed Heroku Application](https://pwa-clk-a94fb349d9da.herokuapp.com/)
 
 !["JATE" Just Another Text Editor Landing Page](/public/images/jatefrontend.png)
